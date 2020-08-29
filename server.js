@@ -14,6 +14,10 @@ app.get("/heroeslounge/team/:hlTeamCode", (request, response) => {
   })
 });
 
+app.get("/status", (_, response) => {
+  response.json({status: 'OK'});
+})
+
 const listener = app.listen(process.env.PORT, () => {
   console.log("Your app is listening on port " + listener.address().port);
 });
