@@ -79,7 +79,7 @@ async function getTeam(hlTeamCode, username, password) {
 async function formatter(teamPage) {
   const { name: teamName } = teamPage.toJson();
   const data = teamPage.teamMemberPages.map((t) => Object.assign({ teamName }, t.toJson()));
-  return promisedStringify(data, {header: true});
+  return promisedStringify(data);
 }
 
 exports.getTeam = getTeam;
